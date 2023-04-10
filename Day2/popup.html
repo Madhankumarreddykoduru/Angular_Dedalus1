@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+<h2>Popup Form</h2>
+<p>Click on the button at the bottom of this page to open the login form.</p>
+<button class="open-button" onclick="openForm()">Open Form</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Registration form</h1>
+      <div class="form-container">
+               <label for="firstName">First Name *</label>
+               <input type="text" id="firstName" name="firstName"><br><br>
+               <label for="lastName">Last Name *</label>
+               <input type="text" id="lastName" name="lastName"><br><br>
+               <label for="age">Age*:</label>
+               <input type="number" name="age" id="age"><br><br>
+               <label for="experience">Experience*:</label>
+               <input type="number" name="experience" id="experience"><br><br>
+               <label for="DOB">DOB:</label>
+               <input type="date" id="DOB" name="DOB"><br><br>
+               <label for="about">About:</label>
+               <textarea name="about" id="about" placeholder="Write about yourself..."></textarea><br><br>
+               <label for="gender">Gender:</label>
+               <input class="radio-input" type="radio" name="gender" value="Male" /> Male
+               <input class="radio-input" type="radio" name="gender" value="Female" /> Female <br><br>
+               <label for="skills">skills</label>
+               <label><input type="checkbox" name="skills"value="c++">C++</label>
+               <label><input type="checkbox" name="skills"value="c">C</label>
+               <label><input type="checkbox" name="skills"value="Python">Python</label>
+               <label><input type="checkbox" name="skills"value="Java">Java</label><br><br>
+              <center><footer>
+              <input type="submit" value="submit"><br><br>
+              </footer></center>  
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<script src="popup.js">
+</script>
+</body>
+</html>

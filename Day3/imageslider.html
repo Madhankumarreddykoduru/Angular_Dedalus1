@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Slideshow</title>
+  </head>
+ <style>
+.container1 {
+border: 3px solid #6d7e7e;
+background-color: #c5f4c5;
+border-radius:25px;
+width: 500px;
+height:500px;
+margin: 25px;
+padding: 30px;
+}
+</style>
+<body>
+<center><div class = "container1">
+<img id="slideshow" src="im1.jpg" width="500" height="500"></center>
+<script>
+var images = ["im1.jpg","im2.jpg","im4.jpg","im5.jpg","im6.jpg","im7.jpg","im8.jpg"];
+var currentIndex = 0;
+var slideshow = document.getElementById("slideshow");
+setInterval(function() {
+slideshow.src = images[currentIndex];
+currentIndex = (currentIndex + 1) % images.length;
+}, 2000);
+</script>
+</div>
+</body>
+</html>
