@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Timer</title>
     <style>
-      .timer{
-        font-size: 100px;
-        padding-left:35%;
-        padding-top:20%;
-        padding-right: 20%;
-        padding-bottom: 20%;
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      #timer {
+        font-size: 3em;
+        color: #333;
+        margin: 50px auto;
+        width: 300px;
+        height: 150px;
+        border: 10px solid #333;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      button {
+        font-size: 1.5em;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #444;
       }
     </style>
   </head>
   <body>
-    <div class="timer" id="timer"></div>
-    <script>    
-      var startTime = 0;
-      var timerElement = document.getElementById("timer");
-      function formatTime(time) {
-        var hours = Math.floor(time / 3600);
-        var minutes = Math.floor((time - (hours * 3600)) / 60);
-        var seconds = time - (hours * 3600) - (minutes * 60);
-        if (hours < 10) { hours = "0" + hours; }
-        if (minutes < 10) { minutes = "0" + minutes; }
-        if (seconds < 10) { seconds = "0" + seconds; }
-        return hours + ":" + minutes + ":" + seconds;
+    <div id="timer">00:00:00</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      var timerInterval;
+      var seconds = 0;
+      var minutes = 0;
+      var hours = 0;
+      
+      function pad(n) {
+        return (n < 10 ? '0' : '') + n;
       }
-      var timerInterval = setInterval(function() {
-        startTime++;
-        timerElement.innerHTML = formatTime(startTime);
-      }, 1000);
+      
+      function updateTimer() {
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+        document.getElementById('timer').textContent = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+      }
+      
+      document.getElementById('start').addEventListener('click', function() {
+        timerInterval = setInterval(updateTimer, 1000);
+      });
+      
+      document.getElementById('stop').addEventListener('click', function() {
+        clearInterval(timerInterval);
+      });
     </script>
   </body>
 </html>
