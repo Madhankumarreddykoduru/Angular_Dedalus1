@@ -202,3 +202,20 @@ font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
     font-family: Arial, Helvetica, sans-serif;
 }
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
