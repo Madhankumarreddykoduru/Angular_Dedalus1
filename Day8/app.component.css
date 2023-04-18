@@ -1,0 +1,41 @@
+/*#header{
+    position: relative;
+    overflow: hidden;
+   }
+   
+   #links{
+       position: absolute;
+       top: 10px;
+       right: 5px;
+   }
+   
+   a{
+       text-decoration:  none;
+       color: white;
+       font-weight: bolder;
+       border: 1px solid white;
+       padding: 2px;
+       cursor: pointer;
+       margin-right: 10px;
+   }
+   h1{
+       border-bottom: 2px solid black;
+       padding-bottom: 20px;
+       color: rgb(23, 23, 47);
+       background-color: rgb(243, 217, 50);
+       margin: 0px;
+   }
+   #services{
+       background-color: lavender;
+       height: 380px;
+       box-sizing: border-box;
+       padding: 20px;
+   }
+   #footer {
+       padding-bottom: 10px;
+       color: rgb(23, 23, 47);
+       background-color: rgb(243, 217, 50);
+       border-top: 2px solid black;
+       font-family: Arial, Helvetica, sans-serif;
+       text-align: center;
+   }*/
