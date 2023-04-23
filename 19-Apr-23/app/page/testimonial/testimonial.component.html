@@ -1,0 +1,5 @@
+<h2 [style.color]="'darkgray'" [style.padding]="'20px'">
+  Our Customer Feedbacks</h2>
+<app-feedback-box 
+*ngFor="let x of feedbacks"
+[feedback]="x"></app-feedback-box>
