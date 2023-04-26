@@ -1,0 +1,19 @@
+<div id="Design">
+  <div class="select">
+  <select [(ngModel)]="selected">
+    <option *ngFor="let x of types">{{x}}</option>
+</select>
+</div>
+ <mat-slider class="slider" min="0" max="3300" steps="50">
+  <input [(value)]="min" matSliderStartThumb>
+  <input [(value)]="max" matSliderEndThumb>
+ </mat-slider>
+ <div class="min"> 
+ <p>{{min}}</p>
+ <p>{{max}}</p>
+</div>
+<br>
+<app-home-box *ngFor="let x of productlist | producttype:selected |priceFilter:min:max" [product]="x"></app-home-box>
+</div>
+<h3>Raise a Complaint</h3>
+<app-complaint-form></app-complaint-form>
