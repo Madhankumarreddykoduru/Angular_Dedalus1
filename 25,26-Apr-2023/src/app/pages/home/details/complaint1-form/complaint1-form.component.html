@@ -1,0 +1,45 @@
+<div id="form"><h1 >give us feedbacks</h1>
+  <div style="overflow: hidden;">
+      <div class="formbox">
+          <h5>First Name</h5>
+          <input type="text" [(ngModel)]="fname">*
+      </div>
+      <div class="formbox">
+          <h5>Email</h5>
+          <input type="email" [(ngModel)]="email">*
+      </div>
+      <div class="formbox">
+          <h5>Product</h5>
+          <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Product</mat-label>
+              <input type="text"
+                     placeholder="Pick one"
+                     aria-label="Number"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+      </div>
+      <div class="formbox">
+          <h5>Message</h5>
+          <textarea [(ngModel)]="message"></textarea>*
+      </div>
+  </div>
+  <div class="alert alert-info" *ngIf="errors.length>0">
+      <ul >
+          <li *ngFor="let x of errors">{{x}}</li>
+      </ul>
+  </div>
+  <div style="margin:30px;"><button class="btn btn-secondary" (click)="submit()">submit</button></div>
+  </div>
+  
+  
+  
+  

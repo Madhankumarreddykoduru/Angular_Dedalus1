@@ -1,0 +1,16 @@
+<a routerLink="/details/{{product.id}}">
+<div class="Products">
+ <div class="name">
+  {{product.name}}
+ </div>
+  <div class="images">
+      <img src="http://localhost/{{product.image}}">
+  </div>
+
+  <div class="text">
+      <p>Price:{{product.price | currency: 'INR'}}<br>
+       Type:{{product.type}}
+      </p>
+  </div>
+</div>
+</a>
