@@ -1,0 +1,11 @@
+<div id="Design">
+  <div class="select">
+  <select [(ngModel)]="selected">
+    <option *ngFor="let x of types">{{x}}</option>
+</select>
+</div>
+<br>
+<app-home-box *ngFor="let x of productlist | producttype:selected [product]="x"></app-home-box>
+</div>
+<h3>Raise a Complaint</h3>
+<app-complaint-form></app-complaint-form>

@@ -1,0 +1,14 @@
+#Design{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+mat-slider {
+  width: 300px;
+  float:right;
+}
+.min{
+  float:right;
+  font-weight: bold;
+}
